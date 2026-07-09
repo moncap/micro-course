@@ -1,0 +1,167 @@
+% Save as: module5-problem-set.tex
+% ============================================================================
+% Problem Set 5: Behavioral Economics — Deviations, Biases & Nudges
+% Microeconomic Theory for Experimentalists & Applied Microeconomists
+% Built from templates/problem_set_template.tex. Compile with pdflatex.
+% ============================================================================
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+
+\newtheorem{question}{Question}
+
+\title{Problem Set 5: Behavioral Economics --- Deviations, Biases \& Nudges\\
+\large Microeconomic Theory for Experimentalists \& Applied Microeconomists}
+\author{Due: \textbf{[date --- before Lecture 1 of Module 6]}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent\emph{Ground rules: collaboration on ideas is encouraged; write-ups
+are individual. You may use AI tools for parts flagged with
+$\langle$AI$\rangle$ and must attach the transcript. Show all calculations.}
+
+\medskip
+
+\noindent\textbf{Weights:} Part A --- 30 points. Part B --- 45 points.
+Part C --- 25 points.
+
+\bigskip
+
+% ---------------------------------------------------------------------------
+\section*{Part A: Theory --- Guided Calculations (30 points)}
+
+\begin{question}[Present bias, sophistication, and the demand for
+commitment --- 18 points]
+An agent lives for three periods and must divide wealth $W = 12$ across
+consumption $c_1, c_2, c_3$ with utility $\ln c$ each period. She has
+$\beta$--$\delta$ preferences with $\beta = 0.7$ and $\delta = 1$: standing
+in any period, utility is
+\[
+  \ln c_{\text{now}} \;+\; 0.7 \times \big(\text{sum of } \ln c
+  \text{ in all remaining periods}\big).
+\]
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{The exponential benchmark (3 pts).} If $\beta = 1$, argue in
+        two sentences (no calculus needed --- think symmetry) that the agent
+        consumes $(4, 4, 4)$.
+  \item \textbf{The period-1 plan (4 pts).} With $\beta = 0.7$, the period-1
+        self solves: maximize $\ln c_1 + 0.7\ln c_2 + 0.7\ln c_3$ subject to
+        $c_1 + c_2 + c_3 = 12$. Show that the plan is
+        $c_1 = 5,\; c_2 = c_3 = 3.5$.
+        \emph{Hint: at the optimum, a dollar moved between any two periods
+        must not raise utility, so $1/c_1 = 0.7/c_2 = 0.7/c_3$. Substitute
+        into the budget.}
+  \item \textbf{The naif's period-2 betrayal (4 pts).} Period 2 arrives with
+        $12 - 5 = 7$ remaining. The period-2 self maximizes
+        $\ln c_2 + 0.7 \ln c_3$ subject to $c_2 + c_3 = 7$. Show she chooses
+        $c_2 \approx 4.12,\; c_3 \approx 2.88$ --- not the $(3.5, 3.5)$ the
+        period-1 self planned. State in one sentence what the naive agent got
+        wrong.
+  \item \textbf{Commitment demand as a diagnostic (5 pts).} A bank offers a
+        free account that lets the agent choose $c_1$ freely but locks the
+        remainder into equal halves: $c_2 = c_3 = (12 - c_1)/2$.
+        \begin{enumerate}[label=(\roman*)]
+          \item Compute the period-1 utility of the \emph{sophisticated}
+                agent with and without the account (with the account she
+                still picks $c_1 = 5$; without it she correctly foresees
+                part (c)). Show the account raises her utility.
+          \item Explain in two sentences why the \emph{naive} agent's
+                willingness to pay for this account is exactly zero.
+        \end{enumerate}
+  \item \textbf{Interpretation (2 pts).} In one paragraph: what does this
+        result let a field researcher \emph{measure} by randomizing the
+        \emph{price} of a commitment account? Connect to the 28\% take-up
+        rate in Ashraf, Karlan \& Yin (2006).
+\end{enumerate}
+\end{question}
+
+\begin{question}[Inequity aversion with numbers --- 12 points]
+A responder in a \$10 ultimatum game has Fehr--Schmidt utility
+\[
+  U = x_{\text{self}} - \alpha \max(x_{\text{other}} - x_{\text{self}}, 0)
+      - \gamma \max(x_{\text{self}} - x_{\text{other}}, 0).
+\]
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(4 pts)} Show that the responder accepts an offer of $s$
+        dollars if and only if $s \ge 10\alpha / (1 + 2\alpha)$. Compute the
+        threshold for $\alpha = 0$, $\alpha = 0.5$, and $\alpha = 1.5$.
+  \item \textbf{(4 pts)} A population of responders has $\alpha$ uniformly
+        distributed on $[0, 1.5]$. What fraction rejects an offer of \$2?
+        Of \$3? \emph{Hint: invert the threshold formula to find the
+        critical $\alpha$ for each offer.}
+  \item \textbf{(4 pts)} In one paragraph: which experimental moments
+        identify $\alpha$ and which identify $\gamma$? (Think about which
+        game puts the decision-maker \emph{behind}, and which puts her
+        \emph{ahead}.) Why can't the ultimatum game alone pin down both?
+\end{enumerate}
+\end{question}
+
+% ---------------------------------------------------------------------------
+\section*{Part B: Experimental Design (45 points)}
+
+\begin{question}[Measuring the sophistication distribution, not just mean
+present bias]
+Part A established that commitment demand is a \emph{diagnostic for
+sophistication}. Design a field experiment in a savings context whose goal
+is to measure the \emph{distribution of sophistication} in the study
+population --- not merely whether a commitment product raises savings.
+Specify:
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(6 pts)} Subject pool and recruitment, and why this
+        population makes the question worth answering.
+  \item \textbf{(12 pts)} Treatments. Your design must include a
+        commitment-device arm with a \emph{randomized price} (possibly
+        including negative prices, i.e.\ small bonuses for take-up), and you
+        must explain what the take-up curve as a function of price
+        identifies that a single free-offer arm cannot.
+  \item \textbf{(9 pts)} Elicitation: how you measure each subject's
+        \emph{predicted} future behavior as well as their actual behavior
+        (the naif is defined by the gap), and why subjects have an incentive
+        to report honestly.
+  \item \textbf{(9 pts)} Hypotheses, and rough sample-size reasoning: anchor
+        an effect-size guess to Ashraf, Karlan \& Yin (28\% take-up; savings
+        up $\sim$80\%) or to your own Lab 5 simulation, and state the
+        approximate $n$ per arm it implies. Simulation-based reasoning is
+        welcome; formulas are not required.
+  \item \textbf{(9 pts)} The biggest confound --- e.g.\ commitment demand
+        driven by protecting money from household members rather than from
+        one's own future self --- and your design answer to it.
+\end{enumerate}
+\end{question}
+
+% ---------------------------------------------------------------------------
+\section*{Part C: Silicon Pilot Interpretation $\langle$AI$\rangle$
+(25 points)}
+
+\begin{question}[The zero-switching-cost puzzle]
+You run \texttt{module5-simulation-lab.py} with one modification permitted
+by the CHANGE HERE blocks: the enrollment form is described as taking
+\emph{zero} time --- ``a single click, right now, on the screen in front of
+you.'' Theory says this should kill the default effect for \emph{every}
+persona: with literally costless switching, even a procrastinator has
+nothing to postpone. Yet your \texttt{exponential} (rational, disciplined)
+personas still show a 25-point default effect.
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(8 pts)} Give two mechanisms that could produce this, at
+        least one specific to LLMs (e.g.\ the model reproducing the
+        \emph{famous result} rather than responding to the decision problem;
+        defaults read as advice; persona text too weak to override priors).
+  \item \textbf{(9 pts)} Design the diagnostic simulation that separates
+        your two mechanisms --- what do you change in the prompt or grid,
+        and what result pattern favors which mechanism? Run it if API budget
+        allows and report; otherwise state the predicted patterns precisely.
+  \item \textbf{(8 pts)} State the design change a \emph{human-subjects}
+        default study should adopt as a result of this pilot, and one
+        sentence on what the pilot could \emph{not} tell you (limits of
+        silicon subjects).
+\end{enumerate}
+Attach your AI transcripts and, if you ran code, the results CSV.
+\end{question}
+
+\end{document}
