@@ -1,0 +1,156 @@
+% Save as: module1-problem-set.tex
+% ============================================================================
+% Problem Set 1: Rational Choice, Preferences & Uncertainty
+% Microeconomic Theory for Experimentalists & Applied Microeconomists
+% Built from templates/problem_set_template.tex. Compile with pdflatex.
+% ============================================================================
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+
+\newtheorem{question}{Question}
+
+\title{Problem Set 1: Rational Choice, Preferences \& Uncertainty\\
+\large Microeconomic Theory for Experimentalists \& Applied Microeconomists}
+\author{Due: \textbf{[date --- before Lecture 1 of Module 2]}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent\emph{Ground rules: collaboration on ideas is encouraged; write-ups
+are individual. You may use AI tools for parts flagged with
+$\langle$AI$\rangle$ and must attach the transcript. Show all calculations.}
+
+\medskip
+
+\noindent\textbf{Weights:} Part A --- 30 points. Part B --- 45 points.
+Part C --- 25 points.
+
+\bigskip
+
+% ---------------------------------------------------------------------------
+\section*{Part A: Theory --- Guided Calculations (30 points)}
+
+\begin{question}[Expected utility with concrete numbers --- 15 points]
+An agent has utility $u(x) = \sqrt{x}$ defined over \emph{final wealth}
+$x$ (not over gains and losses); initial wealth is zero unless stated
+otherwise.
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(4 pts)} Lottery $L$: 50/50 win \$100 or \$0. Compute the
+        expected value, expected utility, certainty equivalent, and risk
+        premium of $L$. Say in one sentence what the risk premium
+        \emph{means} behaviorally.
+  \item \textbf{(4 pts)} The agent now has wealth \$100 and faces a loss of
+        \$64 with probability $1/4$ (final wealth \$36 if the loss hits).
+        Compute her expected utility and certainty equivalent, and show
+        that her maximum willingness to pay for full insurance is \$19.
+        Compare it to the expected loss and interpret the difference.
+  \item \textbf{(4 pts)} An insurer offers full coverage at premium \$18.
+        Does she buy? At premium \$20? State the general rule (one
+        inequality in words) for when a risk-averse agent buys full
+        insurance with a loaded premium.
+  \item \textbf{(3 pts)} A classmate concludes from (a) that ``expected
+        utility theory predicts people are risk averse.'' Correct them in
+        two sentences: what does EU assume, and where does risk aversion
+        actually come from in the theory?
+\end{enumerate}
+\end{question}
+
+\begin{question}[The Allais pattern, by hand --- 15 points]
+Consider the two questions from Lecture 1 (Kahneman \& Tversky 1979
+payoffs):
+\begin{itemize}[nosep]
+  \item \textbf{Q1:} $A$ = \$2400 for sure; \quad
+        $B$ = 33\% \$2500, 66\% \$2400, 1\% \$0.
+  \item \textbf{Q2:} $C$ = 34\% \$2400, 66\% \$0; \quad
+        $D$ = 33\% \$2500, 67\% \$0.
+\end{itemize}
+In KT's data, 82\% chose $A$ and 83\% chose $D$ (the same subjects
+answered both questions).
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(6 pts)} Normalize $u(0) = 0$. Write the expected-utility
+        inequality for $A \succ B$, simplify it, and show it is the
+        \emph{same} inequality as $C \succ D$. Conclude that no utility
+        function rationalizes choosing both $A$ and $D$.
+        \emph{Hint: cancel the common $0.66\,u(2400)$ term.}
+  \item \textbf{(3 pts)} Show that at least 65\% of KT's subjects must have
+        chosen the pair $(A, D)$. \emph{Hint: what is the smallest possible
+        overlap between the 82\% and the 83\%?}
+  \item \textbf{(3 pts)} State in one or two sentences which axiom this
+        pattern violates and what the two questions have in common that the
+        axiom says must not matter.
+  \item \textbf{(3 pts)} A referee writes: ``the Allais pattern is just
+        decision noise.'' Give the one-sentence rebuttal that uses the
+        \emph{direction} of the violation.
+\end{enumerate}
+\end{question}
+
+% ---------------------------------------------------------------------------
+\section*{Part B: Experimental Design (45 points)}
+
+\begin{question}[Does the certainty effect survive real incentives?]
+KT's 82/83 result used hypothetical high stakes. Design an experiment that
+tests whether the certainty effect survives \emph{real} incentives, and how
+it moves with stake size. Specify:
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(6 pts)} Subject pool and recruitment, and why this
+        population is appropriate for the question.
+  \item \textbf{(12 pts)} Treatments. Your design must cross incentive
+        realness (hypothetical vs.\ paid) with at least two stake levels,
+        and you must say what each comparison identifies. Explain how you
+        keep the \emph{probabilities and payoff ratios} of the KT questions
+        intact while scaling the stakes.
+  \item \textbf{(9 pts)} The payment mechanism. If you pay one randomly
+        selected decision \emph{per subject}, explain the
+        incentive-compatibility argument
+        --- and the standard objection to it in \emph{this particular}
+        experiment (Lecture 1 flagged it), plus one design choice that
+        mitigates the objection.
+  \item \textbf{(9 pts)} Hypotheses and rough sample-size reasoning: state
+        the violation rate you expect under each treatment (anchor on KT's
+        65\% floor and on any published real-stakes replication you know;
+        a reasoned guess with a stated source is fine), and the approximate
+        $n$ per cell needed to detect the hypothetical-vs-real difference
+        you posit. Simulation-based reasoning is welcome; formulas are not
+        required.
+  \item \textbf{(9 pts)} The biggest confound and your design answer to it.
+\end{enumerate}
+\end{question}
+
+% ---------------------------------------------------------------------------
+\section*{Part C: Silicon Pilot Interpretation $\langle$AI$\rangle$
+(25 points)}
+
+\begin{question}[The suspiciously perfect replication]
+You run \texttt{module1-simulation-lab.ipynb} with the baseline persona and
+the original KT payoffs. Across the 30 sampled responses per cell (at the
+lab's fixed temperature), your agents choose $A$ 82\% of the time and $D$
+83\% of the time --- matching Kahneman \& Tversky's published shares to the
+percentage point. Your lab partner is thrilled: ``the model has human risk
+preferences!''
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(8 pts)} Give two mechanisms that could produce this match,
+        at least one of which implies your partner is wrong, and say what
+        each mechanism predicts the agents would do on a \emph{new} choice
+        problem with the same structure but unfamiliar payoffs.
+  \item \textbf{(9 pts)} Design the diagnostic simulation that separates
+        your two mechanisms using only changes to the prompt or the persona
+        grid (e.g.\ novel payoff numbers, disguised framing, paraphrase,
+        the ``you are an economist'' persona). State the predicted result
+        pattern under each mechanism. Run it if API budget allows and
+        report; otherwise state the predictions precisely.
+  \item \textbf{(8 pts)} Suppose the diagnostic shows the match is
+        recitation, not behavior. Write the two-sentence ``limits of
+        silicon subjects'' paragraph you would put in a paper that
+        nevertheless uses this lab as a pilot --- what CAN the pilot still
+        establish, and what must wait for human subjects?
+\end{enumerate}
+Attach your AI transcripts and, if you ran code, the results CSV.
+\end{question}
+
+\end{document}
