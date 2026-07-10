@@ -1,0 +1,174 @@
+% Save as: module3-problem-set.tex
+% ============================================================================
+% Problem Set 3: Producer Theory, Costs & Technology
+% Microeconomic Theory for Experimentalists & Applied Microeconomists
+% Built from templates/problem_set_template.tex. Compile with pdflatex.
+% ============================================================================
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+
+\newtheorem{question}{Question}
+
+\title{Problem Set 3: Producer Theory, Costs \& Technology\\
+\large Microeconomic Theory for Experimentalists \& Applied Microeconomists}
+\author{Due: \textbf{[date --- before Lecture 1 of Module 4]}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent\emph{Ground rules: collaboration on ideas is encouraged; write-ups
+are individual. You may use AI tools for parts flagged with
+$\langle$AI$\rangle$ and must attach the transcript. Show all calculations.}
+
+\medskip
+
+\noindent\textbf{Weights:} Part A --- 30 points. Part B --- 45 points.
+Part C --- 25 points.
+
+\bigskip
+
+% ---------------------------------------------------------------------------
+\section*{Part A: Theory --- Guided Calculations (30 points)}
+
+\begin{question}[Cost minimization and cost curves --- 15 points]
+A firm's technology is $q = \sqrt{KL}$. The wage is $w = 4$ and the
+capital rental rate is $r = 1$. Inputs are continuously divisible.
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(4 pts)} At the cost-minimizing input mix, the marginal
+        rate of technical substitution $MP_L / MP_K = K/L$ equals the
+        input price ratio $w/r$. Use this and the production target
+        $q = 10$ to show the firm hires $L = 5$ and $K = 20$, at cost 40.
+  \item \textbf{(4 pts)} Repeat the logic for a general output target $q$
+        to show the long-run cost function is $C(q) = 4q$. What are
+        long-run average and marginal cost? In one sentence, connect the
+        shape of $C(q)$ to this technology's returns to scale.
+  \item \textbf{(5 pts)} Short run: capital is fixed at $\bar K = 20$.
+        Show that short-run cost is $SRC(q) = q^2/5 + 20$, that short-run
+        average cost $SRAC = q/5 + 20/q$ is minimized at exactly $q = 10$
+        with $SRAC = 4$, and that short-run marginal cost equals $SRAC$
+        at that point. \emph{Hint: to minimize $SRAC$, set its derivative
+        to zero --- or use the fact that MC cuts AC at AC's minimum.}
+        State in one sentence what this illustrates about the relation
+        between short-run and long-run cost curves.
+  \item \textbf{(2 pts)} An artefactual experiment hands manager-subjects
+        this exact technology and these prices and asks them to produce
+        $q = 10$ (all subjects reach the output target). Subjects' average
+        spending is 46, falling to 41 by the tenth round. In two sentences: what economic quantity does the
+        gap from 40 measure, and why does its decline with feedback
+        matter for interpreting field productivity dispersion?
+\end{enumerate}
+\end{question}
+
+\begin{question}[Technology adoption as an NPV decision --- 15 points]
+Fertilizer costs \$10 per acre, paid at planting. It raises harvest
+revenue by \$15 per acre, received one season after planting. A farmer is
+deciding whether to adopt on one acre.
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(4 pts)} Compute the NPV of adoption for a farmer whose
+        seasonal discount rate is 10\%. Then compute the break-even
+        seasonal discount rate --- the rate at which NPV is exactly zero
+        --- and say in one sentence why this number makes low adoption a
+        puzzle.
+  \item \textbf{(4 pts)} Credit: the farmer has no cash at planting and
+        must borrow the \$10 at seasonal interest rate $b$, repaying at
+        harvest. For $b = 30\%$: does adoption still pay? Find the
+        break-even borrowing rate. What does the comparison of the two
+        break-even rates in (a) and (b) tell you about how much of the
+        adoption puzzle credit constraints alone can explain?
+  \item \textbf{(4 pts)} Risk: harvest gains are actually $+\$25$ in a
+        good year and $+\$5$ in a bad year, each with probability
+        $1/2$ (same mean, \$15). A risk-neutral farmer's decision is
+        unchanged --- say why in one sentence. Now consider a
+        ``safety-first'' farmer who refuses any option with a possible
+        net loss: what does she do, and what intervention does this
+        friction respond to that credit and information frictions do not?
+  \item \textbf{(3 pts)} A survey finds non-adopting farmers who can
+        state the fertilizer return correctly and who hold \emph{liquid}
+        savings exceeding \$10 at planting. Which frictions does this observation
+        rule out, which remain, and what is the cheapest experiment that
+        would test the leading remaining candidate? \emph{(Hint: think
+        about WHEN the purchase decision is made.)}
+\end{enumerate}
+\end{question}
+
+% ---------------------------------------------------------------------------
+\section*{Part B: Experimental Design (45 points)}
+
+\begin{question}[Separating the adoption frictions]
+Design a field experiment in a smallholder-agriculture setting whose goal
+is to \emph{separate} at least three of the four adoption frictions ---
+credit constraints, information/learning, risk, and present
+bias/procrastination --- for a positive-NPV input (fertilizer or
+equivalent). A price-subsidy arm alone is not acceptable: as discussed in
+class, a price cut raises adoption under every friction. Specify:
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(6 pts)} Setting, subject pool, and recruitment, and why
+        the input's return is credibly positive for this population (your
+        design should say what evidence anchors the NPV premise).
+  \item \textbf{(12 pts)} Treatment arms. For each arm, state which
+        friction it targets and --- the key requirement --- which
+        \emph{pattern of effects across arms} identifies each friction.
+        Include at least one timing manipulation in the spirit of Duflo,
+        Kremer \& Robinson (2011). Say explicitly what the DKR-style
+        comparison (small early discount vs.\ large later subsidy)
+        identifies that neither arm alone does.
+  \item \textbf{(9 pts)} Outcomes and measurement: what you measure, from
+        what source (administrative purchase records vs.\ self-reports),
+        at what times, and one measurement threat with your answer to it.
+  \item \textbf{(9 pts)} Hypotheses and rough sample-size reasoning:
+        state the adoption rates you expect by arm under each friction
+        story (anchor the control-arm rate and the plausible effect sizes
+        on the DKR setting), and the approximate $n$ per arm.
+        Simulation-based reasoning is welcome; formulas are not required.
+  \item \textbf{(9 pts)} The biggest confound in YOUR design and your
+        answer to it. \emph{(Candidates: seasonal liquidity correlates
+        with nearly everything; treatment arms that change the number of
+        contacts with enumerators; spillovers between neighbors assigned
+        to different arms.)}
+\end{enumerate}
+\end{question}
+
+% ---------------------------------------------------------------------------
+\section*{Part C: Silicon Pilot Interpretation $\langle$AI$\rangle$
+(25 points)}
+
+\begin{question}[The managers that always adopt]
+You run \texttt{module3-simulation-lab.ipynb}: LLM plant managers decide
+on the \$10-at-planting / \$15-at-harvest input under three personas
+(patient planner, impatient procrastinator, cautious skeptic) and two
+decision timings (cash-in-hand vs.\ cash-tight). Adoption comes back at
+\textbf{roughly 96\% in every cell}: the timing manipulation moves it by
+one percentage point, and the ``impatient procrastinator'' adopts as readily
+as the ``patient planner.'' In the human literature, baseline adoption is
+a minority and DKR's timing manipulation moved it substantially.
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(8 pts)} Give two mechanisms that could produce this
+        pattern, at least one specific to LLMs. \emph{(Think about what a
+        transparently positive NPV calculation does to a model trained to
+        be helpful and numerate, and about whether a stated persona can
+        outweigh an explicit arithmetic cue.)}
+  \item \textbf{(9 pts)} Design the diagnostic simulation: propose at
+        least two prompt-level manipulations (e.g.\ removing the explicit
+        numbers and describing returns qualitatively; adding a concrete
+        competing use for the \$10 such as school fees due this week;
+        burying the decision in a longer narrative) and state what result
+        pattern under each manipulation would tell you. Run it if API
+        budget allows and report; otherwise state the predicted patterns
+        precisely.
+  \item \textbf{(8 pts)} The research group planned to use this sim to
+        pick which treatment arms deserve budget in the human experiment
+        (e.g.\ ``timing didn't matter in the sim, so drop the DKR arm'').
+        Explain why that inference is unsafe, state what the sim CAN
+        still safely inform, and give the design change this implies for
+        the human pilot plan.
+\end{enumerate}
+Attach your AI transcripts and, if you ran code, the results CSV.
+\end{question}
+
+\end{document}
