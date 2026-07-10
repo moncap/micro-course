@@ -1,0 +1,162 @@
+% Save as: module2-problem-set.tex
+% ============================================================================
+% Problem Set 2: Consumer Theory, Demand & Welfare
+% Microeconomic Theory for Experimentalists & Applied Microeconomists
+% Built from templates/problem_set_template.tex. Compile with pdflatex.
+% ============================================================================
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+
+\newtheorem{question}{Question}
+
+\title{Problem Set 2: Consumer Theory, Demand \& Welfare\\
+\large Microeconomic Theory for Experimentalists \& Applied Microeconomists}
+\author{Due: \textbf{[date --- before Lecture 1 of Module 3]}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent\emph{Ground rules: collaboration on ideas is encouraged; write-ups
+are individual. You may use AI tools for parts flagged with
+$\langle$AI$\rangle$ and must attach the transcript. Show all calculations.}
+
+\medskip
+
+\noindent\textbf{Weights:} Part A --- 30 points. Part B --- 45 points.
+Part C --- 25 points.
+
+\bigskip
+
+% ---------------------------------------------------------------------------
+\section*{Part A: Theory --- Guided Calculations (30 points)}
+
+\begin{question}[Demand and the Slutsky decomposition --- 15 points]
+A consumer has utility $u(x, y) = xy$, income $m = 24$, and faces prices
+$p_y = 3$ throughout.
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(4 pts)} At the optimum, the marginal rate of substitution
+        $y/x$ equals the price ratio $p_x/p_y$. Use this and the budget
+        constraint to show that demand is $x = \dfrac{m}{2 p_x}$ and
+        $y = \dfrac{m}{2 p_y}$ --- i.e.\ she spends half her income on
+        each good. Compute the bundle at $p_x = 3$.
+  \item \textbf{(3 pts)} The price of $x$ falls to $p_x = 2$. Compute the
+        new bundle and state the total effect on $x$.
+  \item \textbf{(5 pts)} Slutsky decomposition. Compute the compensated
+        income $m'$ that makes the \emph{original} bundle exactly
+        affordable at the new prices. Compute demand for $x$ at
+        $(p_x = 2,\; m')$, and report the substitution and income effects
+        separately. \emph{Hint: $m' = m - x_{\text{old}} \cdot \Delta p_x$
+        where $\Delta p_x$ is the price DROP; both effects here are whole
+        numbers.}
+  \item \textbf{(3 pts)} A development agency is choosing between a price
+        subsidy on good $x$ and an equivalent-cost cash transfer (equal
+        total budgetary outlay). In one
+        paragraph, use your decomposition to explain what an experiment
+        that measures only the \emph{total} demand response to the subsidy
+        cannot tell the agency, and what treatment arm fixes it.
+\end{enumerate}
+\end{question}
+
+\begin{question}[CV, EV, and consumer surplus with numbers --- 15 points]
+A consumer has quasi-linear utility: her marginal value for good $x$ is
+$20 - 2x$ dollars, and utility is linear in money spent on everything else
+(so there are no income effects on $x$). The price of $x$ rises from
+\$4 to \$8.
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(3 pts)} Compute her demand for $x$ at each price.
+        \emph{Hint: she buys until marginal value equals price.}
+  \item \textbf{(5 pts)} Compute the loss in consumer surplus from the
+        price rise (a trapezoid --- draw it). Explain in one sentence why,
+        with quasi-linear utility, CV and EV both equal this number.
+  \item \textbf{(4 pts)} Now suppose $x$ were instead a \emph{normal good}
+        with income effects. State which is larger \emph{in absolute
+        value} for this price rise --- CV or EV --- and give the intuition
+        in two sentences. \emph{Hint:
+        CV asks the compensation question at NEW prices, when the consumer
+        is poorer in real terms.}
+  \item \textbf{(3 pts)} A ministry must budget compensation payments for
+        households hurt by this price rise, and separately wants to
+        predict how households would vote on a referendum to block it.
+        Which welfare measure belongs to which task, and why?
+\end{enumerate}
+\end{question}
+
+% ---------------------------------------------------------------------------
+\section*{Part B: Experimental Design (45 points)}
+
+\begin{question}[Is the WTP--WTA gap an endowment effect?]
+Kahneman, Knetsch \& Thaler (1990) found median WTA roughly twice median
+WTP for the same mug. The loss-aversion reading says this is a real
+feature of preferences. The skeptical reading (Plott--Zeisel style) says
+much of it is subject confusion about the elicitation mechanism and
+strategic habits imported from everyday bargaining. Design a lab
+experiment that measures the WTP--WTA gap AND separates these two
+readings. Specify:
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(6 pts)} Subject pool and recruitment, and why prior
+        experience with the mechanism (or its absence) matters for your
+        question.
+  \item \textbf{(12 pts)} Treatments. Your design must include (i) an
+        endowment manipulation (sellers vs.\ buyers of the same good) and
+        (ii) at least one arm that changes subjects' \emph{understanding
+        or experience} of the mechanism (e.g.\ paid practice rounds on
+        induced-value tokens) without changing the good or the endowment.
+        Say what each comparison identifies.
+  \item \textbf{(9 pts)} The elicitation mechanism and its
+        incentive-compatibility argument, written for a skeptic in plain
+        language (this is the tutor-session drill). Then name one failure
+        mode the mechanism does NOT fix.
+  \item \textbf{(9 pts)} Hypotheses and rough sample-size reasoning:
+        state the WTA/WTP ratio you expect in each arm under each reading
+        (anchor on KKT's $\approx 2$ and on the training-shrinks-the-gap
+        literature), and the approximate $n$ per arm to distinguish them.
+        Simulation-based reasoning is welcome; formulas are not required.
+  \item \textbf{(9 pts)} The biggest confound remaining in YOUR design and
+        your answer to it.
+\end{enumerate}
+\end{question}
+
+% ---------------------------------------------------------------------------
+\section*{Part C: Silicon Pilot Interpretation $\langle$AI$\rangle$
+(25 points)}
+
+\begin{question}[The agents that were too rational]
+You run \texttt{module2-simulation-lab.ipynb}. Across all personas and
+framings, your agents' four-menu choices come back \textbf{100\%
+WARP-consistent} --- not a single violation in 180 responses. Human
+subjects in comparable budget-choice experiments (Andreoni \& Miller 2002;
+Choi et al.\ 2007) are highly but \emph{imperfectly} consistent: roughly
+one in ten violates GARP, and consistency scores vary meaningfully across
+people. (The comparison is qualitative: the lab's audit is pairwise WARP
+over four menus, while the human statistics are GARP rates over longer
+menu sequences.) Your lab partner reports: ``the agents replicate rational
+consumer theory --- great news.''
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(8 pts)} Explain why perfect consistency is a
+        \emph{divergence} from human behavior, not a replication ---
+        and give two mechanisms (at least one LLM-specific) that could
+        produce it.
+  \item \textbf{(9 pts)} Design the diagnostic simulation that tests
+        whether silicon consistency is robust or fragile: propose at least
+        two manipulations (e.g.\ non-round prices, more menus, distractor
+        text in the prompt, a persona described as busy or distracted) and
+        state what result pattern under each manipulation would tell you.
+        Run it if API budget allows and report; otherwise state the
+        predicted patterns precisely.
+  \item \textbf{(8 pts)} Your research group wants to use this lab to
+        pilot a budget-choice experiment for human subjects --- including
+        choosing the number of menus and estimating how many subjects
+        will fail rationality screens. State one thing the silicon pilot
+        CAN safely inform, one thing it CANNOT (and why), and the design
+        change this implies for the human pilot plan.
+\end{enumerate}
+Attach your AI transcripts and, if you ran code, the results CSV.
+\end{question}
+
+\end{document}
