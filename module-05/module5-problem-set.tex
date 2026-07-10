@@ -66,9 +66,10 @@ in any period, utility is
         remainder into equal halves: $c_2 = c_3 = (12 - c_1)/2$.
         \begin{enumerate}[label=(\roman*)]
           \item Compute the period-1 utility of the \emph{sophisticated}
-                agent with and without the account (with the account she
-                still picks $c_1 = 5$; without it she correctly foresees
-                part (c)). Show the account raises her utility.
+                agent with and without the account. You may take $c_1 = 5$
+                in both cases (with log utility, re-optimizing $c_1$ changes
+                nothing); without the account she correctly foresees
+                part (c). Show the account raises her utility.
           \item Explain in two sentences why the \emph{naive} agent's
                 willingness to pay for this account is exactly zero.
         \end{enumerate}
@@ -80,14 +81,18 @@ in any period, utility is
 \end{question}
 
 \begin{question}[Inequity aversion with numbers --- 12 points]
-A responder in a \$10 ultimatum game has Fehr--Schmidt utility
+A responder in a \$10 ultimatum game has Fehr--Schmidt utility\footnote{%
+Notation: Fehr \& Schmidt (1999) call these parameters $\alpha$ and
+$\beta$; we write $\gamma$ for the second to avoid a clash with the
+discounting $\beta$ of Question 1.}
 \[
   U = x_{\text{self}} - \alpha \max(x_{\text{other}} - x_{\text{self}}, 0)
       - \gamma \max(x_{\text{self}} - x_{\text{other}}, 0).
 \]
 
 \begin{enumerate}[label=(\alph*)]
-  \item \textbf{(4 pts)} Show that the responder accepts an offer of $s$
+  \item \textbf{(4 pts)} Assume $\gamma < 1$ and consider offers
+        $s \le 5$. Show that the responder accepts an offer of $s$
         dollars if and only if $s \ge 10\alpha / (1 + 2\alpha)$. Compute the
         threshold for $\alpha = 0$, $\alpha = 0.5$, and $\alpha = 1.5$.
   \item \textbf{(4 pts)} A population of responders has $\alpha$ uniformly
