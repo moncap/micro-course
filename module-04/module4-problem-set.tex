@@ -1,0 +1,168 @@
+% Save as: module4-problem-set.tex
+% ============================================================================
+% Problem Set 4: Asymmetric Information, Moral Hazard & Adverse Selection
+% Microeconomic Theory for Experimentalists & Applied Microeconomists
+% Built from templates/problem_set_template.tex. Compile with pdflatex.
+% ============================================================================
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+
+\newtheorem{question}{Question}
+
+\title{Problem Set 4: Asymmetric Information, Moral Hazard \& Adverse
+Selection\\
+\large Microeconomic Theory for Experimentalists \& Applied Microeconomists}
+\author{Due: \textbf{[date --- before Lecture 1 of Module 5]}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent\emph{Ground rules: collaboration on ideas is encouraged; write-ups
+are individual. You may use AI tools for parts flagged with
+$\langle$AI$\rangle$ and must attach the transcript. Show all calculations.}
+
+\medskip
+
+\noindent\textbf{Weights:} Part A --- 30 points. Part B --- 45 points.
+Part C --- 25 points.
+
+\bigskip
+
+% ---------------------------------------------------------------------------
+\section*{Part A: Theory --- Guided Calculations (30 points)}
+
+\begin{question}[Piece rates, flat wages, and selling the job --- 15
+points]
+A worker produces output worth \$1 per unit; output equals effort $e$.
+Effort costs the worker $c(e) = e^2/20$ dollars and is \emph{unobservable}
+--- only output can be contracted on. The worker's outside option is 0.
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(4 pts)} Under a piece rate $r$ per unit, the worker
+        maximizes $r e - e^2/20$. Show that she chooses $e = 10r$, and
+        compute her effort, earnings (gross pay), effort cost, and net
+        payoff at $r = 0.4$.
+  \item \textbf{(3 pts)} Under a flat wage (paid regardless of output),
+        what effort does a purely self-interested worker choose, and why?
+        One sentence on what this predicts about flat-wage workplaces ---
+        a prediction Lecture 2's gift-exchange evidence complicates.
+  \item \textbf{(5 pts)} The firm keeps output minus pay, so under piece
+        rate $r$ its profit is $e - re = 10r(1 - r)$. Find the firm's
+        profit-maximizing $r$, the resulting effort, firm profit, and
+        worker net payoff. Then show that ``selling the job'' --- piece
+        rate $r = 1$ plus a fixed franchise fee $F = 5$ --- achieves the
+        first-best effort $e = 10$ and makes the firm strictly better
+        off. \emph{Hint: first-best effort maximizes total surplus
+        $e - e^2/20$.}
+  \item \textbf{(3 pts)} Now output is noisy (equal to effort on average)
+        and the worker is risk-averse. In words plus one inequality:
+        why does the sell-the-job contract stop being optimal, and what
+        does the optimal piece rate trade off?
+\end{enumerate}
+\end{question}
+
+\begin{question}[Participation and incentive constraints --- 15 points]
+A project yields revenue \$120 on success and \$30 on failure. With high
+effort (personal cost \$12 to the agent) success probability is 0.9; with
+low effort (cost \$0) it is 0.5. The agent's outside option is \$20.
+Effort is invisible; the contract is a wage pair $(w_s, w_f)$ paid on the
+outcome. Both parties are risk-neutral; wages may not be negative.
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(4 pts)} Write the participation constraint and the
+        incentive constraint --- each first in one plain-English
+        sentence, then in one line of algebra. Simplify the incentive
+        constraint to a statement about the spread $w_s - w_f$.
+  \item \textbf{(5 pts)} Find the cheapest contract implementing high
+        effort (both constraints bind). Report $(w_s, w_f)$, the expected
+        wage, and verify that implementing high effort beats the firm's
+        best flat-wage-low-effort alternative.
+  \item \textbf{(3 pts)} Explain in two sentences why no spread larger
+        than \$30 helps the firm --- and why, with any risk aversion at
+        all on the agent's side, a larger spread strictly hurts. What
+        economic role does each binding constraint play?
+  \item \textbf{(3 pts)} If the agent were risk-averse, state (no
+        computation) which constraint becomes more expensive to satisfy,
+        what happens to the firm's cost of implementing high effort, and
+        when the firm would give up and accept low effort.
+\end{enumerate}
+\end{question}
+
+% ---------------------------------------------------------------------------
+\section*{Part B: Experimental Design (45 points)}
+
+\begin{question}[Decomposing the performance-pay effect]
+Lazear (2000) found Safelite's switch to piece rates raised output
+$\sim$44\%, roughly half from incentives (the same workers producing
+more) and half from selection (more productive workers joining). Design
+an experiment --- lab, online, or field --- that separately identifies
+the incentive and selection effects of a piece-rate contract for a real
+task. Specify:
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(6 pts)} Subject pool, recruitment, and the real-effort
+        task, with the properties the task must have (measurable output,
+        a quality margin, no team production) and why each matters.
+  \item \textbf{(12 pts)} Treatments. Your design must include (i) a
+        stage or arm where workers are \emph{randomly assigned} to fixed
+        wage vs.\ piece rate, and (ii) a stage or arm where workers
+        \emph{choose} their contract before working. Say precisely which
+        comparison identifies the incentive effect, which identifies
+        selection, and what the contract-choice data themselves reveal.
+  \item \textbf{(9 pts)} Measurement: output quantity AND quality (piece
+        rates famously distort unmeasured margins), plus a baseline
+        productivity measure taken \emph{before} any contract is
+        revealed --- explain what the baseline buys you for the selection
+        analysis.
+  \item \textbf{(9 pts)} Hypotheses and rough sample-size reasoning:
+        anchor effect sizes on Lazear's decomposition (total
+        $\sim$44\%, roughly half incentives), state the per-arm $n$
+        needed to distinguish the incentive effect from zero and from
+        the total effect. Simulation-based reasoning is welcome;
+        formulas are not required.
+  \item \textbf{(9 pts)} The biggest confound in YOUR design and your
+        answer to it.
+\end{enumerate}
+\end{question}
+
+% ---------------------------------------------------------------------------
+\section*{Part C: Silicon Pilot Interpretation $\langle$AI$\rangle$
+(25 points)}
+
+\begin{question}[The agents that matched both literatures]
+You run \texttt{module4-simulation-lab.ipynb} with neutral personas. Your
+silicon workers deliver effort $\approx 5$ under the \$2.50 piece rate
+(the exact selfish-benchmark optimum), effort $\approx 2$ under the
+stingy flat wage, and effort $\approx 7$ under the generous flat wage
+(tight distributions --- within-cell standard deviations under 1) ---
+a textbook incentive response AND a strong gift-exchange pattern,
+simultaneously. Your lab partner celebrates: ``we've validated standard
+theory and Fehr et al.\ in one run!''
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(8 pts)} Explain why producing BOTH canonical patterns at
+        once is itself grounds for suspicion rather than double
+        validation, and give two mechanisms (at least one LLM-specific)
+        that could generate this result.
+  \item \textbf{(9 pts)} Design the diagnostic simulation that
+        determines what is driving the flat-wage effort pattern. Your
+        design must include (i) a \emph{parametric wage sweep} (many wage
+        levels between \$10 and \$25, identical wording) and (ii) an
+        \emph{intentions manipulation} (wage set by a computer vs.\
+        chosen by the employer), and may add others (e.g.\ stripping the
+        experiment framing). State the predicted result pattern under
+        each mechanism from part (a). Run it if API budget allows and
+        report; otherwise state the predictions precisely.
+  \item \textbf{(8 pts)} A colleague wants to use this lab to pilot a
+        real gift-exchange field experiment --- including choosing the
+        generous wage level and predicting the effort response. State
+        one thing the silicon pilot CAN safely inform, one thing it
+        CANNOT (and why), and the design change this implies for the
+        human study.
+\end{enumerate}
+Attach your AI transcripts and, if you ran code, the results CSV.
+\end{question}
+
+\end{document}
