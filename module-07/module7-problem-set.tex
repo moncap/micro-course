@@ -1,0 +1,181 @@
+% Save as: module7-problem-set.tex
+% ============================================================================
+% Problem Set 7: Development, Labor & Education
+% Microeconomic Theory for Experimentalists & Applied Microeconomists
+% Built from templates/problem_set_template.tex. Compile with pdflatex.
+% ============================================================================
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+
+\newtheorem{question}{Question}
+
+\title{Problem Set 7: Development, Labor \& Education\\
+\large Microeconomic Theory for Experimentalists \& Applied Microeconomists}
+\author{Due: \textbf{[date --- before Lecture 1 of Module 8]}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent\emph{Ground rules: collaboration on ideas is encouraged; write-ups
+are individual. You may use AI tools for parts flagged with
+$\langle$AI$\rangle$ and must attach the transcript. Show all calculations.}
+
+\medskip
+
+\noindent\textbf{Weights:} Part A --- 30 points. Part B --- 45 points.
+Part C --- 25 points.
+
+\bigskip
+
+% ---------------------------------------------------------------------------
+\section*{Part A: Theory --- Guided Calculations (30 points)}
+
+\begin{question}[Dynamic complementarity with numbers --- 15 points]
+A child's adult skill depends on early-childhood investment $I_E$ and
+later investment $I_L$. Consider two candidate technologies:
+\emph{complements}, $S = I_E \times I_L$, and \emph{substitutes},
+$S = I_E + I_L$. A family (or a government) has 10 units to allocate.
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(4 pts)} Under each technology, find the allocation of
+        the 10 units that maximizes $S$, and the resulting skill level
+        (if the maximizer is not unique, say so).
+        \emph{Hint: under complements, think symmetry.}
+  \item \textbf{(4 pts)} Now suppose early investment is stuck at
+        $I_E = 2$ (the early window was missed). Under the complements
+        technology, how many units of late investment are needed to
+        reach the skill level 25 that a balanced 5/5 allocation would
+        have produced? What is the total cost of that remediation path
+        (count both the early and the late units), and what is the
+        marginal product of a late unit at $I_E = 2$ versus at
+        $I_E = 5$?
+  \item \textbf{(4 pts)} In one paragraph: why do late-remediation
+        programs systematically underperform early programs \emph{if}
+        the technology is complementary, and what 2$\times$2 experiment
+        identifies whether it actually is? State the estimand in one
+        phrase (Module 6 named it).
+  \item \textbf{(3 pts)} A skeptic notes that production-function
+        parameters estimated from observational data are contaminated
+        by \emph{parental responses}: parents may reinforce early
+        advantages or compensate for early deficits. Explain in two
+        sentences how each response biases the observational estimate
+        of complementarity, and why randomization in the 2$\times$2
+        experiment of (c) removes this bias (parental responses to the
+        programs themselves remain part of the measured effect ---
+        Part B(c) returns to this).
+\end{enumerate}
+\end{question}
+
+\begin{question}[Deworming, externalities, and cost-effectiveness --- 15
+points]
+A deworming program costs \$0.50 per treated child per year. Evaluation
+evidence (stylized Miguel--Kremer magnitudes) shows each treated child
+gains 0.075 school-years per year of treatment. In addition, each
+treated child generates an infection-reduction externality: 2 nearby
+untreated children each gain 0.02 school-years.
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(5 pts)} Compute the cost per additional school-year
+        (i) counting only the direct effect and (ii) counting direct
+        plus externality effects. By what factor does ignoring the
+        externality overstate the cost?
+  \item \textbf{(4 pts)} The externality was only visible because
+        randomization was at the \emph{school} level. Explain in three
+        sentences why child-level randomization within schools would
+        have (i) contaminated the control group and (ii) biased the
+        estimated treatment effect, stating the direction of the bias.
+  \item \textbf{(3 pts)} A ministry ranks programs by cost per
+        school-year and funds the top three. Using your numbers,
+        explain how the choice of randomization level in the
+        \emph{evaluation} can change which programs get \emph{funded}
+        --- one concrete sentence about the ranking.
+  \item \textbf{(3 pts)} Name one other intervention type (any domain)
+        whose evaluation plausibly zeroed out a spillover by
+        randomizing at too fine a level, and say in one sentence what
+        the coarser design would be.
+\end{enumerate}
+\end{question}
+
+% ---------------------------------------------------------------------------
+\section*{Part B: Experimental Design (45 points)}
+
+\begin{question}[Testing dynamic complementarity in the field]
+Design a field experiment in a low-income setting that tests whether
+early and later child investments are complements --- not merely whether
+each program "works." Specify:
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(6 pts)} Setting, subject pool, and recruitment: the
+        two investment programs (an early-childhood program, ages 1--3,
+        and a later program, ages 5--7) and why your setting makes the
+        complementarity question policy-relevant.
+  \item \textbf{(12 pts)} Treatments: the cross-randomized 2$\times$2
+        (neither / early only / late only / both), what each comparison
+        identifies, and why the \emph{interaction} is the estimand ---
+        including the prediction each technology (complements vs.\
+        substitutes) makes for the ``both'' cell relative to the sum of
+        the single-program effects.
+  \item \textbf{(9 pts)} Measurement: child skill assessments at
+        multiple ages AND parental investment responses (time, money,
+        attention) --- explain why measuring parental responses is not
+        optional in this design (Part A(1)(d) is the reason), and how
+        you will distinguish reinforcement from compensation in the
+        data.
+  \item \textbf{(9 pts)} Hypotheses and power: state the interaction
+        hypothesis under each technology, and --- using Module 6's
+        lesson that interactions need roughly 4$\times$ the sample of a
+        main effect --- give per-cell and total sample sizes anchored to
+        a stated main-effect size (e.g.\ 0.25 SD per program, typical
+        of early-childhood interventions; any reasoned anchor
+        accepted). Note the follow-up horizon problem and your interim
+        strategy.
+  \item \textbf{(9 pts)} Ethics with a vulnerable population --- this
+        is graded as designed substance, not boilerplate: equipoise for
+        each cell (why is ``neither'' ethical here?), what the control
+        group receives, consent under low literacy, local approval and
+        benefit sharing, and one design change you would accept at an
+        ethics board's request even at a power cost.
+\end{enumerate}
+\end{question}
+
+% ---------------------------------------------------------------------------
+\section*{Part C: Silicon Pilot Interpretation $\langle$AI$\rangle$
+(25 points)}
+
+\begin{question}[The population that matched the mean]
+You run \texttt{module7-simulation-lab.ipynb}. Your synthetic
+rural-Kenya population's mean dictator-game giving lands within one
+percentage point of the published human estimate you entered as the
+calibration target (you did not tune the population to the target; the
+match arose on the first run). Your lab partner declares the population
+``calibrated'' and proposes piloting a cash-transfer instrument on it to
+forecast the transfer's consumption response for the grant proposal.
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(8 pts)} Using the calibration hierarchy (marginals →
+        behavioral moment → gradients/heterogeneity → treatment
+        responses), explain what the matched mean does and does not
+        establish, and give two LLM-specific mechanisms that can
+        produce a matched mean WITHOUT the population being calibrated
+        in any useful sense.
+  \item \textbf{(9 pts)} Design the diagnostic battery for the next two
+        rungs: (i) a gradient check (which demographic gradients, from
+        which human literature, and what pattern confirms vs.\ refutes
+        calibration) and (ii) an out-of-task check (a second game or
+        elicitation with published cross-cultural data). State what
+        result pattern would justify which uses of the population. Run
+        it if API budget allows and report; otherwise state predictions
+        precisely.
+  \item \textbf{(8 pts)} The grant proposal: state one thing the
+        synthetic population CAN legitimately contribute to the
+        cash-transfer study (and why), one thing it CANNOT (and the
+        circularity that makes rung 4 unreachable from inside the
+        sim), and the sentence you would write in the proposal's
+        methods section describing the silicon pilot's role honestly.
+\end{enumerate}
+Attach your AI transcripts and, if you ran code, the results CSV.
+\end{question}
+
+\end{document}
