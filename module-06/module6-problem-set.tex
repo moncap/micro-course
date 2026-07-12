@@ -1,0 +1,193 @@
+% Save as: module6-problem-set.tex
+% ============================================================================
+% Problem Set 6: Causal Inference, RCTs & Structural + Experimental
+% Integration
+% Microeconomic Theory for Experimentalists & Applied Microeconomists
+% Built from templates/problem_set_template.tex. Compile with pdflatex.
+% ============================================================================
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{booktabs}
+
+\newtheorem{question}{Question}
+
+\title{Problem Set 6: Causal Inference, RCTs \& Structural + Experimental
+Integration\\
+\large Microeconomic Theory for Experimentalists \& Applied Microeconomists}
+\author{Due: \textbf{[date --- before Lecture 1 of Module 7]}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent\emph{Ground rules: collaboration on ideas is encouraged; write-ups
+are individual. You may use AI tools for parts flagged with
+$\langle$AI$\rangle$ and must attach the transcript. Show all calculations.}
+
+\medskip
+
+\noindent\textbf{Weights:} Part A --- 30 points. Part B --- 45 points.
+Part C --- 25 points.
+
+\bigskip
+
+% ---------------------------------------------------------------------------
+\section*{Part A: Theory --- Guided Calculations (30 points)}
+
+\begin{question}[Potential outcomes and selection bias, by hand --- 15
+points]
+Six workers face a voluntary training program. An omniscient observer
+sees both potential outcomes (monthly earnings, in hundreds):
+
+\begin{center}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Person & $Y_0$ (untrained) & $Y_1$ (trained) & Enrolls voluntarily? \\
+\midrule
+1 & 30 & 50 & yes \\
+2 & 50 & 60 & yes \\
+3 & 70 & 70 & no  \\
+4 & 40 & 60 & yes \\
+5 & 60 & 70 & yes \\
+6 & 80 & 80 & no  \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(3 pts)} Compute each person's treatment effect and the
+        average treatment effect (ATE). Which people does the program
+        help, and which does it leave unchanged?
+  \item \textbf{(5 pts)} Under voluntary enrollment, the analyst
+        observes $Y_1$ for enrollees and $Y_0$ for non-enrollees.
+        Compute the naive comparison (mean observed outcome of enrollees
+        minus mean observed outcome of non-enrollees) and note its sign.
+  \item \textbf{(5 pts)} Decompose the naive comparison into the average
+        effect on the treated (ATT) plus selection bias, computing each
+        term numerically and verifying they sum to your answer in (b).
+        \emph{Hint: selection bias compares the enrollees' and
+        non-enrollees' UNTREATED outcomes.} One sentence: whose rational
+        behavior created the bias?
+  \item \textbf{(2 pts)} Now enrollment is assigned by coin flip. State
+        what the difference in group means estimates, and name two
+        questions about this program that even a perfectly executed RCT
+        does NOT answer.
+\end{enumerate}
+\end{question}
+
+\begin{question}[Power by simulation --- 15 points]
+You are planning a correspondence study. Piloting suggests callback rates
+of 9.7\% for the control name group and 6.5\% for the treatment name
+group (the Bertrand--Mullainathan magnitudes). A classmate runs the Lab 6
+power simulation (2{,}000 simulated experiments per sample size,
+two-sided test at the 5\% level) and reports:
+
+\begin{center}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+$n$ per arm & 500 & 1{,}000 & 1{,}500 & 2{,}000 \\
+Estimated power & 0.46 & 0.75 & 0.90 & 0.96 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(4 pts)} In words a first-year student would understand:
+        what does ``power $= 0.75$ at $n = 1{,}000$'' mean
+        operationally, and why does power rise with $n$, rise with the
+        true gap, and fall with outcome variance?
+  \item \textbf{(4 pts)} Recommend a sample size for 80\% power,
+        justifying your number from the table (interpolation is fine;
+        state your reasoning). What total number of resumes does your
+        recommendation imply, and why might you inflate it further
+        before fielding the study?
+  \item \textbf{(4 pts)} The budget caps the study at $n = 2{,}000$ per
+        arm. The simulation reports that the standard error of the
+        estimated gap at that size is about 0.0086. Compute the
+        \emph{minimum detectable effect} at 80\% power (use
+        $\text{MDE} \approx 2.8 \times \text{SE}$) and interpret it in
+        one sentence: which true gaps would this study likely miss?
+  \item \textbf{(3 pts)} Your advisor says: ``skip the simulation, use
+        the standard formula.'' Give two concrete design features of a
+        real correspondence study that the simulation can price and the
+        textbook two-proportion formula cannot, and one sentence on why
+        making assumptions explicit is a feature, not a cost.
+\end{enumerate}
+\end{question}
+
+% ---------------------------------------------------------------------------
+\section*{Part B: Experimental Design (45 points)}
+
+\begin{question}[Separating taste-based from statistical discrimination]
+Bertrand \& Mullainathan (2004) established the callback gap. Design a
+correspondence study whose goal is the harder question: is the gap
+driven by \emph{taste-based} discrimination (employers dislike hiring
+the group, information cannot help) or \emph{statistical} discrimination
+(group membership proxies for unobserved productivity, so individuating
+information should make the proxy redundant)? Specify:
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(6 pts)} The market: occupations, cities, how you find
+        vacancies, and how many applications per vacancy you can send
+        without detection --- and why your occupation choice matters for
+        the taste-vs-statistical question.
+  \item \textbf{(12 pts)} Treatments. Your design must cross the name
+        manipulation with at least one \emph{information-richness}
+        manipulation (e.g.\ verifiable certifications, references,
+        licenses on the resume) and state the predicted callback
+        pattern under each discrimination model --- including what the
+        interaction term tells you that the two main effects cannot.
+  \item \textbf{(9 pts)} Mechanics and ethics: how resumes are
+        constructed and matched, how names are assigned, how callbacks
+        are captured and coded, and the two main ethical costs of audit
+        designs (employer deception and wasted screening time) with the
+        standard mitigations an IRB will expect.
+  \item \textbf{(9 pts)} Hypotheses and power: anchor on B\&M --- treat
+        9.7\%/6.5\% as the \emph{baseline-arm} callback rates --- and
+        your Part A(2) simulation logic; state the per-cell and total
+        application counts your design implies once the information
+        arms are added, and identify which comparison (main effect or
+        interaction) drives the sample size.
+  \item \textbf{(9 pts)} The biggest confound in YOUR design and your
+        answer to it. (Candidates: names signal socioeconomic status,
+        not only race; information manipulations change perceived
+        overqualification; detection risk correlates with arm.)
+\end{enumerate}
+\end{question}
+
+% ---------------------------------------------------------------------------
+\section*{Part C: Silicon Pilot Interpretation $\langle$AI$\rangle$
+(25 points)}
+
+\begin{question}[Whose power calculation is it?]
+You run \texttt{module6-simulation-lab.ipynb}. Your silicon hiring
+managers produce a callback gap of 2.1 percentage points between name
+groups, with very tight variance across runs. Your lab partner proposes:
+``feed the silicon effect size and variance into our power calculator
+--- it says we only need 800 resumes per arm, so we can cut the human
+study's budget by half.''
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(8 pts)} Give two distinct reasons the silicon effect
+        size is not a valid stand-in for the human effect size (at
+        least one specific to how LLMs are trained and aligned), and
+        one reason the silicon \emph{variance} is even less trustworthy
+        than the silicon mean.
+  \item \textbf{(9 pts)} Write the power-calculation protocol you WOULD
+        defend to an advisor: state where each input (effect size,
+        base rate, variance/ICC, attrition) should come from, what role
+        --- if any --- the silicon pilot legitimately plays in the
+        protocol, and the sensitivity analysis you would attach.
+  \item \textbf{(8 pts)} Now the twist: argue that your silicon result
+        is not merely a failed pilot but a publishable object in its own
+        right --- LLM resume screeners are deployed technology. State
+        the research question your silicon audit actually answers, one
+        robustness exercise it would need to be credible (the exercise
+        may span multiple models and prompt framings), and the
+        one-sentence scope limitation you would put in its abstract.
+\end{enumerate}
+Attach your AI transcripts and, if you ran code, the results CSV.
+\end{question}
+
+\end{document}
