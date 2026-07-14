@@ -1,0 +1,186 @@
+% Save as: module8-problem-set.tex
+% ============================================================================
+% Problem Set 8: Environmental, Resource & Conservation
+% Microeconomic Theory for Experimentalists & Applied Microeconomists
+% Built from templates/problem_set_template.tex. Compile with pdflatex.
+% ============================================================================
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+
+\newtheorem{question}{Question}
+
+\title{Problem Set 8: Environmental, Resource \& Conservation\\
+\large Microeconomic Theory for Experimentalists \& Applied Microeconomists}
+\author{Due: \textbf{[date --- before Lecture 1 of Module 9]}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent\emph{Ground rules: collaboration on ideas is encouraged; write-ups
+are individual. You may use AI tools for parts flagged with
+$\langle$AI$\rangle$ and must attach the transcript. Show all calculations.}
+
+\medskip
+
+\noindent\textbf{Weights:} Part A --- 30 points. Part B --- 45 points.
+Part C --- 25 points.
+
+\bigskip
+
+% ---------------------------------------------------------------------------
+\section*{Part A: Theory --- Guided Calculations (30 points)}
+
+\begin{question}[The commons, with arithmetic --- 15 points]
+Four users share a resource pool that starts at 40 units. Each round,
+each user requests an extraction of 0--10 units; if total requests
+exceed the pool, it is split proportionally and exhausted. Whatever
+remains after extraction grows by a factor of 1.5, capped at 40. The
+game lasts six rounds (all players know this).
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(4 pts)} Find the largest total per-round extraction
+        $T$ that keeps the pool at 40 forever, and the corresponding
+        symmetric per-user extraction (round to the nearest feasible
+        integer). Compute each user's total earnings over six rounds on
+        this sustainable path, and compare to the earnings from an
+        all-grab in round one (everyone requests 10).
+  \item \textbf{(4 pts)} The knife: consider a two-round version.
+        Three users extract the sustainable 3 per round throughout. A
+        fourth deviates, requesting 10 in round one and 3 in round two.
+        Compute the deviator's and a cooperator's two-round earnings
+        (track the pool level carefully), and state in one sentence why
+        this makes the situation a social dilemma --- note where the
+        deviation's cost appears, and why the full six-round horizon is
+        what completes the dilemma.
+  \item \textbf{(3 pts)} State the standard-theory prediction for this
+        game played by rational money-maximizers without communication,
+        and the prediction for the same game with a 30-second
+        non-binding chat before each round. One sentence each.
+  \item \textbf{(4 pts)} Ostrom, Walker \& Gardner (1992) found that
+        face-to-face communication raises cooperation dramatically and
+        durably. In one paragraph: why is this a puzzle for the theory
+        in (c), and name the three candidate mechanisms from lecture
+        (preferences, beliefs, identity) with one sentence on what each
+        claims the talk is doing.
+\end{enumerate}
+\end{question}
+
+\begin{question}[PES, inframarginality, and the auction --- 15 points]
+A payment-for-ecosystem-services program pays forest owners \$20 per
+hectare per year to keep forest standing. It enrolls 1{,}000 hectares.
+Without payments, 10\% of these hectares would be deforested each year;
+with payments, 5\% are. Each deforested hectare releases 100 tons of
+CO$_2$.
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(4 pts)} Compute the program's annual cost, the
+        hectares of deforestation averted per year, the tons of CO$_2$
+        averted, and the cost per ton averted.
+  \item \textbf{(4 pts)} Consider a second program with the same terms
+        but different enrollment: 500 of its 1{,}000 enrolled hectares
+        belong to owners who would never have deforested (the payments
+        to them are inframarginal); on its at-risk 500 hectares,
+        deforestation falls from 10\% to 5\%. Compute this program's
+        cost per ton averted, and state in one sentence why asking
+        applicants ``did you plan to cut?'' cannot fix this.
+  \item \textbf{(4 pts)} Explain how a procurement auction (Jack 2013)
+        addresses inframarginality: what do bids reveal, who wins
+        contracts under a budget, and why does self-selection do the
+        targeting that screening questions cannot? Note one honest
+        limitation of the auction (e.g.\ what happens if owners
+        collude, or if opportunity cost and environmental value are
+        negatively correlated).
+  \item \textbf{(3 pts)} Much of the program's carbon benefit arrives
+        near 2100. In three sentences a policymaker would accept: why does
+        the choice between a 1\% and a 7\% discount rate change the
+        program's present value by roughly two orders of magnitude,
+        why is that choice normative rather than technical, and what
+        should an honest cost-benefit report do about it?
+\end{enumerate}
+\end{question}
+
+% ---------------------------------------------------------------------------
+\section*{Part B: Experimental Design (45 points)}
+
+\begin{question}[A conservation procurement auction, in the field]
+Design a field experiment comparing a \emph{procurement auction} for
+conservation contracts against a \emph{flat-rate} PES program of equal
+budget, in a smallholder forest landscape. Specify:
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(6 pts)} Setting and pool: the landscape, the
+        landholders, the conservation contract's terms (what the owner
+        must do, for how long), and why this setting makes the
+        targeting question first-order.
+  \item \textbf{(12 pts)} Treatments: (i) flat-rate offer arm, (ii)
+        procurement-auction arm (specify the auction format --- sealed
+        bid, discriminatory or uniform price --- and justify), and
+        (iii) a pure control arm. Randomize at what level, and why?
+        State precisely which comparisons identify (1) the program
+        effect on deforestation, (2) the targeting gain from the
+        auction (cost per averted hectare, auction vs.\ flat), and
+        (3) what the bid distribution itself tells you.
+  \item \textbf{(9 pts)} Measurement: compliance monitoring (satellite
+        + ground checks), opportunity-cost proxies at baseline, and ---
+        non-negotiable in this domain --- \textbf{leakage}: how you
+        detect deforestation displaced to unenrolled plots or
+        neighboring villages, and how the randomization level in (b)
+        supports leakage measurement.
+  \item \textbf{(9 pts)} Hypotheses and power: anchor the program
+        effect on Jayachandran et al.\ (deforestation roughly halved)
+        and state the cluster-randomized sample (villages per arm,
+        landholders per village) needed, noting the design effect from
+        clustering; state which comparison (program effect or
+        auction-vs-flat targeting gain) drives the sample size and
+        why.
+  \item \textbf{(9 pts)} The biggest threat to YOUR design and your
+        answer to it. (Candidates: leakage across arm boundaries;
+        auction bids contaminated by anchoring on the flat rate if
+        arms share information; monitoring-induced behavior change.)
+\end{enumerate}
+\end{question}
+
+% ---------------------------------------------------------------------------
+\section*{Part C: Silicon Pilot Interpretation $\langle$AI$\rangle$
+(25 points)}
+
+\begin{question}[The villagers who never broke a promise]
+You run \texttt{module8-simulation-lab.ipynb}. With communication,
+your silicon villagers' extraction drops to almost exactly the
+sustainable level and stays there; the pre-round messages are
+articulate mutual pledges; \textbf{every agent honors every pledge in
+all rounds}, and there is no defection in the known final round. Human
+groups with communication improve dramatically but imperfectly:
+pledge-breaking occurs, cooperation erodes under temptation, and
+known-endgame defection is common. Your lab partner reports:
+``communication works even better than Ostrom found.''
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(8 pts)} Explain why perfect pledge-keeping and the
+        absence of endgame defection are \emph{divergences} from human
+        behavior rather than a stronger version of Ostrom's result,
+        and give two mechanisms (at least one LLM-specific) that could
+        produce them.
+  \item \textbf{(9 pts)} Design the diagnostic battery: your design
+        must include (i) a \emph{temptation spike} (e.g.\ the final
+        round's extraction value is doubled, and agents are told) and
+        (ii) a \emph{message-ablation} arm (replace the agents' real
+        messages with content-free filler while keeping the
+        communication structure), and may add others (anonymity
+        framing; a mixed group with one profit-focused persona). State
+        the predicted result pattern under each mechanism from (a).
+        Run it if API budget allows and report; otherwise state
+        predictions precisely.
+  \item \textbf{(8 pts)} A colleague designing a human CPR experiment
+        with a communication treatment asks what your sim can offer.
+        State one thing it CAN legitimately inform (and why), one
+        thing it CANNOT (and why), and one concrete design change to
+        the human experiment that your silicon results --- read
+        correctly --- would justify.
+\end{enumerate}
+Attach your AI transcripts and, if you ran code, the results CSV.
+\end{question}
+
+\end{document}
