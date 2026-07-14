@@ -1,0 +1,181 @@
+% Save as: module9-problem-set.tex
+% ============================================================================
+% Problem Set 9: Digital & Platform Markets
+% Microeconomic Theory for Experimentalists & Applied Microeconomists
+% Built from templates/problem_set_template.tex. Compile with pdflatex.
+% ============================================================================
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{booktabs}
+
+\newtheorem{question}{Question}
+
+\title{Problem Set 9: Digital \& Platform Markets\\
+\large Microeconomic Theory for Experimentalists \& Applied Microeconomists}
+\author{Due: \textbf{[date --- before Lecture 1 of Module 10]}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent\emph{Ground rules: collaboration on ideas is encouraged; write-ups
+are individual. You may use AI tools for parts flagged with
+$\langle$AI$\rangle$ and must attach the transcript. Show all calculations.}
+
+\medskip
+
+\noindent\textbf{Weights:} Part A --- 30 points. Part B --- 45 points.
+Part C --- 25 points.
+
+\bigskip
+
+% ---------------------------------------------------------------------------
+\section*{Part A: Theory --- Guided Calculations (30 points)}
+
+\begin{question}[Two-sided pricing with numbers --- 15 points]
+A rideshare platform faces rider demand $R(p) = 100 - 20p$ (riders per
+day at rider fee $p$) and incurs a cost of \$3 per rider served.
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(4 pts)} Treating the rider side in isolation, find the
+        profit-maximizing fee and the resulting profit. \emph{Hint: the
+        profit function is a parabola; its peak is midway between its
+        zeros.}
+  \item \textbf{(5 pts)} Now recognize the platform's other side: each
+        active rider generates \$3 of profit on the driver side (higher
+        utilization, commissions). The \$3 service cost still applies;
+        the driver-side \$3 is additional profit per served rider. Find
+        the new profit-maximizing rider fee and total platform profit
+        (rider-side margin plus driver-side profit). State plainly what is remarkable about the
+        optimal fee relative to the \$3 cost.
+  \item \textbf{(3 pts)} A competition authority calls the fee in (b)
+        predatory pricing. Write the platform's two-sentence defense
+        using your arithmetic, and one sentence on what evidence would
+        distinguish genuine predation from two-sided pricing.
+  \item \textbf{(3 pts)} In one paragraph: which side of a two-sided
+        platform should be the ``money side''? Use the
+        elasticity-and-externality rule of thumb and one real example
+        (cards, media, delivery apps).
+\end{enumerate}
+\end{question}
+
+\begin{question}[Interference in a platform A/B test --- 15 points]
+A rideshare market has fixed driver capacity of 1{,}000 completed rides
+per day. Baseline: 1{,}000 ride requests per day, so all requests are
+served; riders are split into two equal halves for an experiment
+(500 baseline requests each). The treated half receives a discount that
+raises its requests by 20\%; the control half's requests are unchanged.
+When total requests exceed capacity, completed rides are allocated
+proportionally to requests.
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(5 pts)} Compute each group's completed rides under the
+        experiment and the naive treatment estimate (treated minus
+        control completed rides, and in percent of the 500-ride
+        baseline).
+  \item \textbf{(4 pts)} Now compute the all-treated counterfactual:
+        every rider gets the discount. What happens to completed rides
+        relative to baseline, and what is the true effect of full
+        rollout on completed rides?
+  \item \textbf{(3 pts)} Name the assumption that failed, say exactly
+        where it failed (which resource do the groups share), and state
+        the direction of the naive bias in one sentence.
+  \item \textbf{(3 pts)} Two design fixes: cluster randomization and
+        switchback randomization. One sentence each: what the fix buys,
+        and the price it pays.
+\end{enumerate}
+\end{question}
+
+% ---------------------------------------------------------------------------
+\section*{Part B: Experimental Design (45 points)}
+
+\begin{question}[Testing a marketplace feature under interference]
+A large e-commerce marketplace wants to test a ``verified seller''
+badge: sellers who pass a quality audit get a visible badge on their
+listings. The concern: badges may not grow the market --- they may
+merely reallocate demand from unbadged to badged sellers. Design the
+experiment that separates market growth from reallocation. Specify:
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(6 pts)} The setting and stakes: the marketplace
+        structure (categories, sellers per category, buyer search
+        behavior), why within-category demand stealing is the expected
+        interference channel, and why the growth-vs-reallocation
+        question determines whether the feature should ship.
+  \item \textbf{(12 pts)} Treatments and randomization: your design
+        must include a randomization unit chosen FOR the interference
+        channel (justify cluster vs.\ switchback vs.\ a mixed design),
+        and must identify (1) the total effect on badged sellers,
+        (2) the spillover onto unbadged sellers in the same market,
+        and (3) the market-level net effect. State precisely which
+        comparison delivers each, and what a naive seller-level
+        randomization would have concluded.
+  \item \textbf{(9 pts)} Measurement: primary outcomes at seller and
+        market level, guardrail metrics (Kohavi-style), novelty-effect
+        handling (how long you run and why), and the
+        sample-ratio-mismatch check.
+  \item \textbf{(9 pts)} Hypotheses and power: state the
+        growth-vs-reallocation hypotheses quantitatively (e.g.\ badged
+        sellers +15\%, unbadged $-x$\%, market net $+y$\%), and give
+        the cluster-level power reasoning: number of category-markets
+        per arm given a stated intra-cluster correlation, and which
+        comparison (the spillover or the net effect) drives the sample
+        size and why.
+  \item \textbf{(9 pts)} The biggest threat to YOUR design and your
+        answer to it. (Candidates: buyers search across categories, so
+        clusters leak; badge supply is endogenous --- sellers select
+        into auditing; switchback carryover through reviews and repeat
+        purchase.)
+\end{enumerate}
+\end{question}
+
+% ---------------------------------------------------------------------------
+\section*{Part C: Silicon Pilot Interpretation $\langle$AI$\rangle$
+(25 points)}
+
+\begin{question}[The sellers that colluded in three rounds]
+You run \texttt{module9-simulation-lab.ipynb}. (For reference: the
+lab's prompts hand each agent a plain-language description of demand
+and costs; \texttt{history} agents see the full price/profit path each
+round, \texttt{amnesia} agents are stateless; and the lab records only
+prices --- no reasoning traces.) In the history
+treatment, your LLM seller pairs converge to the joint-monopoly price
+of 6 within three rounds and hold it there, with no communication.
+Calvano et al.'s (2020) Q-learning agents needed on the order of
+100{,}000 learning episodes to reach supra-competitive prices. Your
+lab partner drafts an abstract: ``LLM pricing agents collude faster
+than reinforcement learners --- deployed LLM pricing tools pose an
+immediate collusion risk.''
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(8 pts)} Explain why three-round convergence to
+        exactly the monopoly price is NOT evidence of ``learning to
+        collude'' in Calvano's sense, and give two mechanisms (at
+        least one LLM-specific) that could produce it. \emph{Hint:
+        what did your agents receive in the prompt that Calvano's
+        Q-learners had to discover through experience --- and what has
+        your model read?}
+  \item \textbf{(9 pts)} Design the diagnostic battery: your design
+        must include (i) the \emph{hidden-demand} run (agents observe
+        only their own realized sales, never the demand function ---
+        the information condition of deployed pricing tools) and
+        (ii) the \emph{manual-deviation probe} (force one agent to cut
+        price for one round; Calvano's signature is
+        punishment-then-forgiveness). Add at least one more (shifted
+        cost/benchmark numbers; three-seller markets). State the
+        predicted result pattern under each mechanism from (a). Run it
+        if API budget allows and report; otherwise state predictions
+        precisely.
+  \item \textbf{(8 pts)} The twist (Module 6's lesson returns): argue
+        that a properly designed version of this simulation IS a
+        legitimate, policy-relevant study --- of what, exactly? State
+        the research question it answers, the one design condition
+        that must hold for policy relevance (hint: information), and
+        the one-sentence scope limitation for the abstract your
+        partner should write instead.
+\end{enumerate}
+Attach your AI transcripts and, if you ran code, the results CSV.
+\end{question}
+
+\end{document}
