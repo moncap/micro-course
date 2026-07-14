@@ -1,0 +1,262 @@
+% Save as: syllabus.tex
+% ============================================================================
+% Course Syllabus — Microeconomic Theory for Experimentalists & Applied
+% Microeconomists: Foundations, Behavior & AI-Augmented Experiments
+% 14-week semester version. Compile with pdflatex.
+% ============================================================================
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage[hidelinks]{hyperref}
+
+\title{Microeconomic Theory for Experimentalists \& Applied
+Microeconomists\\
+\large Foundations, Behavior \& AI-Augmented Experiments}
+\author{\textbf{[Instructor]} \quad · \quad \textbf{[email]} \quad ·
+\quad Office hours: \textbf{[times/location]}}
+\date{\textbf{[Semester Year]} · \textbf{[meeting times]} ·
+\textbf{[room]}}
+
+\begin{document}
+\maketitle
+
+\section*{Course description}
+This course trains master's students to \emph{design, critique, and
+pilot real experiments}. It covers the microeconomic theory an
+experimentalist actually uses --- choice under uncertainty, consumer
+and producer theory, information economics, behavioral economics, and
+causal inference --- taught intuition-first: through graphs, worked
+numerical examples, and in-class demonstrations in which you generate
+the anomalies with your own choices before the theory names them.
+
+The course's distinguishing feature is serious integration of LLM
+generative agents (``Homo silicus''-style simulation) as both a
+pedagogical tool and a research method: every one to two weeks you run
+a simulation lab in which populations of AI agents play the games and
+face the decisions the theory describes, and you compare their behavior
+to the human experimental literature --- and, often, to this class's
+own in-class choices. The comparison is treated as a first-class
+intellectual question, never a gimmick: by the end you will know
+precisely what silicon pilots can establish (instrument debugging,
+pipeline validation, power analysis, framing detection, audits of
+deployed AI systems) and what they cannot (effect-size forecasts,
+welfare claims), and you will have the habits --- preregistration,
+stability audits, honest methods paragraphs --- that separate the two.
+
+\textbf{No prior programming experience is assumed.} All lab code is
+provided complete and runs top-to-bottom in Google Colab; your
+modifications are confined to clearly marked \texttt{CHANGE HERE}
+blocks, and every notebook ships with a \texttt{DRY\_RUN} mode that
+executes end-to-end without an API key or cost.
+
+\section*{Learning objectives: the three exit competencies}
+Graduates of this course can:
+\begin{enumerate}[nosep]
+  \item \textbf{Read modern applied and experimental papers
+        critically} --- identify what was tested, whether the design
+        supports the claims, and what would strengthen it.
+  \item \textbf{Design theory-informed experiments end to end} ---
+        subjects, treatments, incentive-compatible elicitation,
+        identification, simulation-based power, and ethics as design
+        substance. \emph{This competency carries the most weight.}
+  \item \textbf{Use LLM generative agents to pilot, stress-test, and
+        scale designs} before spending money on human subjects ---
+        with explicit, disciplined reasoning about where silicon
+        subjects diverge from humans.
+\end{enumerate}
+
+\section*{Format}
+\begin{itemize}[nosep]
+  \item \textbf{Lectures} --- theory plus the story of its application
+        (classic experiments and recent papers), with live in-class
+        choice demonstrations wherever the material allows. Expect to
+        make paid decisions on your phone most weeks.
+  \item \textbf{AI tutor sessions} (weekly, required) --- structured
+        conversations with a course-configured tutor AI that quizzes
+        you, debugs your experiment designs, and adapts to your
+        research interests. You submit the session log with a short
+        reflection.
+  \item \textbf{LLM simulation labs} (every 1--2 weeks) --- run and
+        modify generative-agent experiments; compare agent behavior to
+        human benchmarks; write up findings in the course's
+        six-section format.
+  \item \textbf{Experiment sessions} --- in weeks 11--13 the second
+        meeting is a hands-on session: a calibration workshop, a
+        common-pool resource experiment, and a pricing tournament,
+        each played for real (small) stakes.
+  \item \textbf{Capstone} --- design and simulate an original
+        experiment; present a proposal ready for an IRB, an employer,
+        or a PhD application. See \texttt{capstone/} in the course
+        repository.
+\end{itemize}
+
+\section*{Assessment}
+\begin{center}
+\begin{tabular}{@{}lc@{}}
+\toprule
+Component & Weight \\
+\midrule
+Weekly AI tutor logs + reflections & 10\% \\
+Problem sets (10; lowest dropped) & 25\% \\
+Simulation-lab write-ups & 15\% \\
+Midterm: replicate + extend a published experiment & 20\% \\
+Capstone (milestones 10\% · paper 60\% · pilot 15\% ·
+presentation 15\% of this component) & 30\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent\emph{Problem sets} mix guided calculations, ``design an
+experiment to test this prediction'' tasks (the heaviest-weighted
+part of every set), and silicon-pilot interpretation. \emph{Lab
+write-ups} use the required six-section structure (question/benchmark
+$\to$ agent design $\to$ treatments $\to$ results vs.\ humans $\to$
+divergence diagnosis $\to$ design implication). The \emph{midterm}
+(due week 9) asks you to replicate and extend one published experiment
+using either human data from the paper or an LLM simulation, in a
+short paper with the same six-section discipline.
+
+\section*{Weekly schedule}
+Core readings are read deeply (2--3 items per week); optional readings
+are for going further and for capstone mining. Full reading details,
+lab instructions, and deliverable checklists are in each module's
+student handout in the course repository.
+
+\begin{longtable}{@{}p{0.7cm}p{4.3cm}p{5.6cm}p{3.6cm}@{}}
+\toprule
+Wk & Module & Core readings & Due \\
+\midrule
+\endhead
+1--2 & \textbf{1.} Rational Choice, Preferences \& Uncertainty &
+Kahneman \& Tversky (1979); Holt \& Laury (2002) &
+Lab 1 write-up; PS1 \\
+3 & \textbf{2.} Consumer Theory, Demand \& Welfare &
+Kahneman, Knetsch \& Thaler (1990); Andreoni \& Miller (2002) &
+Lab 2 write-up; PS2 \\
+4 & \textbf{3.} Producer Theory, Costs \& Technology &
+Duflo, Kremer \& Robinson (2011); Bloom et al.\ (2013) &
+Lab 3 write-up; PS3 \\
+5--6 & \textbf{4.} Asymmetric Information, Moral Hazard \& Adverse
+Selection & Fehr, Kirchsteiger \& Riedl (1993); Lazear (2000) &
+Lab 4 write-up; PS4 \\
+7--8 & \textbf{5.} Behavioral Economics: Deviations, Biases \& Nudges &
+Kahneman \& Tversky (1979) revisited; Ashraf, Karlan \& Yin (2006);
+Madrian \& Shea (2001) &
+Lab 5 write-up; PS5; \emph{capstone question memo (wk 8)} \\
+9--10 & \textbf{6.} Causal Inference, RCTs \& Structural Integration &
+Bertrand \& Mullainathan (2004); Duflo, Glennerster \& Kremer (2007) &
+\emph{Midterm (wk 9)}; Lab 6 write-up; PS6; \emph{capstone theory +
+hypotheses (wk 10)} \\
+11 & \textbf{7.} Frontier: Development, Labor \& Education ·
+\emph{calibration workshop} & Cunha \& Heckman (2007); Miguel \&
+Kremer (2004) & Lab 7 write-up; PS7 \\
+12 & \textbf{8.} Frontier: Environmental, Resource \& Conservation ·
+\emph{CPR experiment session} & Ostrom, Walker \& Gardner (1992);
+Jayachandran et al.\ (2017) & Lab 8 write-up; PS8; \emph{capstone
+design draft} \\
+13 & \textbf{9.} Frontier: Digital \& Platform Markets ·
+\emph{pricing tournament} & Calvano et al.\ (2020); Blake, Nosko \&
+Tadelis (2015) & Lab 9 write-up; PS9 \\
+14 & \textbf{10.} AI-Econ Nexus \& Capstone ·
+\emph{capstone workshop} & Horton (2023); Argyle et al.\ (2023) &
+Lab 10 report; PS10; \emph{capstone simulation pilot +
+preregistration} \\
+15 & Capstone & --- & \emph{Comparison memo} \\
+F & Capstone presentations & --- & \emph{Final paper +
+presentation} \\
+\bottomrule
+\end{longtable}
+
+\noindent Optional/going-further readings for every module (classics
+such as Allais 1953, Ellsberg 1961, Holmstr\"om 1979, Rochet \& Tirole
+2003; surveys such as DellaVigna 2009 and Foster \& Rosenzweig 2010;
+and one recent LLM-agents paper per module, announced in class) are
+listed in the module handouts. Textbook support: Nicholson \& Snyder,
+\emph{Microeconomic Theory} (theory backbone, chapters assigned per
+module); Kagel \& Roth, \emph{Handbook of Experimental Economics}
+(selected chapters); Thaler \& Sunstein, \emph{Nudge} (behavioral
+modules, mechanism taxonomy).
+
+\section*{Software and materials}
+\begin{itemize}[nosep]
+  \item \textbf{Google Colab} (free tier sufficient) --- all labs run
+        here; nothing is installed locally.
+  \item \textbf{Anthropic API key} --- required for live lab runs; a
+        modest budget (typically under \$5 per lab) suffices, and
+        every notebook's \texttt{DRY\_RUN} mode works without any key.
+        \textbf{[Instructor: state here whether course API credits are
+        provided.]}
+  \item \textbf{Course repository} ---
+        \url{https://github.com/moncap/micro-course}: labs (with
+        Open-in-Colab links), problem sets, handouts, and capstone
+        materials.
+  \item \textbf{LaTeX} (Overleaf recommended) --- problem-set and
+        capstone write-ups may be submitted in LaTeX or Word; LaTeX
+        templates are provided and its use is encouraged.
+  \item \textbf{Expected Parrot EDSL} (optional) --- for
+        survey-style capstone simulations; plain-Python scaffolds
+        cover everything required.
+  \item In-class experiments run on \textbf{oTree}/Qualtrics
+        instances operated by the instructor; you only need a phone or
+        laptop with a browser.
+\end{itemize}
+
+\section*{AI use policy}
+This course \emph{requires} AI use --- and demands discipline about it.
+\begin{itemize}[nosep]
+  \item \textbf{Required:} the weekly tutor sessions, the simulation
+        labs, and the capstone pilot are AI-based coursework. Problem
+        sets flag AI-permitted parts with $\langle$AI$\rangle$.
+  \item \textbf{Disclosure:} any substantive AI assistance ---
+        required or voluntary --- must be disclosed, and transcripts
+        attached where the assignment says so. Keep your logs; they
+        are part of your grade and your protection.
+  \item \textbf{Boundaries:} AI may draft code within the labs'
+        \texttt{CHANGE HERE} conventions and may serve as a study
+        partner anywhere. The analysis, interpretation, and prose of
+        your write-ups must be your own; verbatim AI-written analysis
+        submitted as yours is an academic-integrity violation.
+  \item \textbf{Provenance:} simulated data must never be presented as
+        human data, in this course or anywhere else. This is an
+        integrity constraint, not a formality.
+  \item \textbf{Honesty standard:} claims about what a simulation
+        shows are graded against the course's can/cannot framework;
+        over-claiming costs more than admitting a limitation.
+\end{itemize}
+
+\section*{Course policies}
+\begin{itemize}[nosep]
+  \item \textbf{Collaboration:} discussing ideas on problem sets is
+        encouraged; write-ups are individual. Lab write-ups and the
+        capstone follow their own stated rules (capstone pairs
+        allowed with a contribution statement).
+  \item \textbf{Late work:} lab write-ups and problem sets lose 10\%
+        per day, capped at 50\%; the lowest problem set is dropped.
+        Capstone milestones are gating --- late milestones delay
+        feedback, not points, but the final deliverables are firm
+        dates.
+  \item \textbf{In-class experiments} pay real (small) stakes and are
+        part of the course's data; participation is expected, and any
+        student may opt out of having their (always anonymized)
+        choices displayed by telling the instructor.
+  \item \textbf{Accessibility:} students needing accommodations should
+        contact \textbf{[disability services office]} and the
+        instructor in week 1.
+  \item \textbf{Academic integrity:} governed by \textbf{[institutional
+        policy]}; the AI-use policy above defines the line for
+        AI-related work.
+\end{itemize}
+
+\section*{One paragraph of advice}
+The students who thrive in this course are not the strongest coders or
+the most mathematically fluent --- the code is given and the math is
+scaffolded. They are the ones who take the design questions seriously:
+who ask, of every model, ``what experiment does this let me build?''
+and, of every simulation, ``what exactly is this evidence of?'' Bring
+your own research interests --- the tutor sessions, the problem sets'
+design parts, and the capstone are all built to run on them.
+
+\end{document}
