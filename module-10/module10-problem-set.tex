@@ -1,0 +1,188 @@
+% Save as: module10-problem-set.tex
+% ============================================================================
+% Problem Set 10: AI-Econ Nexus
+% Microeconomic Theory for Experimentalists & Applied Microeconomists
+% Built from templates/problem_set_template.tex. Compile with pdflatex.
+% ============================================================================
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{booktabs}
+
+\newtheorem{question}{Question}
+
+\title{Problem Set 10: AI-Econ Nexus\\
+\large Microeconomic Theory for Experimentalists \& Applied Microeconomists}
+\author{Due: \textbf{[date --- before finals week]}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent\emph{Ground rules: collaboration on ideas is encouraged; write-ups
+are individual. You may use AI tools for parts flagged with
+$\langle$AI$\rangle$ and must attach the transcript. Show all calculations.}
+
+\medskip
+
+\noindent\textbf{Weights:} Part A --- 30 points. Part B --- 45 points.
+Part C --- 25 points.
+
+\bigskip
+
+% ---------------------------------------------------------------------------
+\section*{Part A: Theory --- Guided Calculations (30 points)}
+
+\begin{question}[What is a replication worth? Bayes on silicon evidence
+--- 15 points]
+You hold a prior of $P(F) = 0.3$ that your agent population is a
+\emph{faithful simulator} of the target human population (versus
+$\neg F$: it produces answers by recitation and surface patterns
+without a faithful behavioral process).
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(5 pts)} You run a famous experiment and the agents
+        reproduce the published result. Because the result saturates
+        the training data, recitation predicts this success almost as
+        well as fidelity: $P(\text{reproduce} \mid F) = 0.9$ and
+        $P(\text{reproduce} \mid \neg F) = 0.85$. Compute the
+        posterior $P(F \mid \text{reproduce})$ and state, in one
+        sentence, what the small movement teaches.
+  \item \textbf{(5 pts)} Starting from your posterior in (a), you now
+        test a \emph{novel, preregistered, out-of-corpus} prediction
+        (a design variation with no published answer):
+        $P(\text{match} \mid F) = 0.7$,
+        $P(\text{match} \mid \neg F) = 0.2$. Compute the posterior
+        after a successful match. Why is this test so much more
+        informative --- answer in terms of the likelihood ratio.
+  \item \textbf{(3 pts)} Your labmate proposes boosting credibility by
+        replicating THREE more famous results. Explain in two
+        sentences why the posterior gain is small even after all
+        three, and what single study design would move it more.
+  \item \textbf{(2 pts)} One sentence: what does this calculation
+        imply about how your capstone's simulation section should be
+        structured?
+\end{enumerate}
+\end{question}
+
+\begin{question}[Reading a stability report --- 15 points]
+Your audit battery (Lab 10) runs a dictator-game pilot across two
+models and three prompt paraphrases (same content, different wording),
+at fixed temperature. Mean percent given:
+
+\begin{center}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+ & Paraphrase 1 & Paraphrase 2 & Paraphrase 3 \\
+\midrule
+Model A & 27 & 29 & 41 \\
+Model B & 33 & 34 & 36 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+For reference, human dictator-game means vary across comparable lab
+replications by roughly $\pm 5$ percentage points around a common mean
+--- treat spreads wider than about 10 points as clearly exceeding the
+band.
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(4 pts)} Compute each model's paraphrase range (the
+        prompt-sensitivity index) and the cross-model gap at each
+        paraphrase. Which numbers exceed the human cross-lab
+        variability band?
+  \item \textbf{(4 pts)} Classify the following claims as SURVIVES or
+        DOES NOT SURVIVE this report, with one clause of
+        justification each: (i) ``silicon giving is positive and
+        substantial''; (ii) ``silicon mean giving is $\approx$30\%'';
+        (iii) ``Model A exhibits human-like giving.''
+  \item \textbf{(4 pts)} Diagnose Model A's Paraphrase 3: name two
+        candidate explanations (one about the wording, one about the
+        model) and the single follow-up run that would separate them.
+  \item \textbf{(3 pts)} State the ``one model, one prompt'' fallacy
+        in one sentence, and the minimal robustness protocol your
+        capstone pilot must therefore include.
+\end{enumerate}
+\end{question}
+
+% ---------------------------------------------------------------------------
+\section*{Part B: Experimental Design (45 points)}
+
+\begin{question}[The full sim-pilot workflow, pre-registered]
+A research team plans a human field experiment: \emph{does paying gig
+workers a fixed bonus upfront (versus the same bonus on completion)
+change task quality?} The upfront bonus is unconditional --- paid at
+the start and never clawed back. (Module 4's gift exchange and Module
+5's reference dependence both make predictions; a clawback variant
+would be a different design, pitting loss framing against gain
+framing.) Before fielding it, they
+will run an LLM simulation pilot. Design the complete pilot workflow.
+Specify:
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(6 pts)} The human design being piloted: task, arms,
+        outcomes (quantity AND quality), and the two theories'
+        competing predictions --- so the pilot has something specific
+        to serve.
+  \item \textbf{(12 pts)} The simulation pilot itself: agent design
+        (personas, and what must NOT be smuggled into them), task
+        rendering, treatments mirrored from the human design, and ---
+        the heart --- the specific design parameters the pilot is
+        allowed to tune (instruction wording, comprehension checks,
+        bonus salience, quality-rubric clarity) versus the quantities
+        it must not be used to estimate. Justify each assignment
+        using the course's can/cannot list.
+  \item \textbf{(9 pts)} The preregistration, written before any run:
+        what gets committed (hypotheses, prompts, models,
+        temperatures, N per cell, parsers, analysis code, the audit
+        battery plan) and WHY cheap iteration makes this discipline
+        more necessary, not less.
+  \item \textbf{(9 pts)} The decision rule: state, in advance, the
+        three result patterns --- one that justifies fielding the
+        human study as designed, one that sends the team back to
+        redesign (and what specifically gets redesigned), one that
+        would halt the project --- and defend why a silicon result
+        can legitimately trigger each.
+  \item \textbf{(9 pts)} The steel-manned objection: write the
+        STRONGEST version of ``this pilot tells you nothing --- the
+        model has read your literature,'' then the response that
+        concedes what is correct and states precisely what the pilot
+        still delivers.
+\end{enumerate}
+\end{question}
+
+% ---------------------------------------------------------------------------
+\section*{Part C: Silicon Pilot Interpretation $\langle$AI$\rangle$
+(25 points)}
+
+\begin{question}[The committee member's objection]
+At your capstone defense, a committee member says: ``I stopped reading
+at the simulation section. These models are trained on the very
+literature you study; your `pilot' is a book report with extra steps.
+Nothing in it should influence whether the human study runs.''
+
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{(8 pts)} Steel-man the objection: restate it in its
+        STRONGEST form, adding the two best supporting arguments the
+        committee member did not think to make (draw on the course's
+        divergence taxonomy --- contamination, alignment artifacts,
+        missing channels, prompt fragility).
+  \item \textbf{(9 pts)} The defense: concede explicitly what is
+        right (which uses of your pilot the objection genuinely
+        kills), then defend what survives --- the can-list uses ---
+        showing for each WHY the objection's mechanism does not touch
+        it. Your defense must cite at least one concrete result from
+        your own audit battery (real if you ran it; specified
+        precisely if not).
+  \item \textbf{(8 pts)} Write the honest methods paragraph
+        (4--6 sentences) for your capstone paper: what the simulation
+        was used for, what it was not used for, the stability
+        evidence, and where every effect-size and power assumption
+        actually came from. This paragraph will be graded against the
+        course's honesty standard: claiming a use from the
+        cannot-list costs more than admitting a limitation.
+\end{enumerate}
+Attach your AI transcripts and, if you ran code, the results CSV.
+\end{question}
+
+\end{document}
