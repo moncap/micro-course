@@ -18,13 +18,26 @@ LLM generative agents as silicon subjects.
 
 ## What's in this repo
 
-One folder per module, each containing the student-facing materials:
+- **`syllabus/`** — the full 14-week syllabus (PDF + LaTeX source):
+  schedule, readings, assessment weights, and the course's AI-use
+  policy.
+- **`module-01/` … `module-10/`** — one folder per module, each with:
 
 | File | What it is |
 |---|---|
-| `moduleN-simulation-lab.ipynb` | The LLM simulation lab — run it in Google Colab |
+| `moduleN-simulation-lab.ipynb` | The LLM simulation lab — run it in Google Colab (DRY_RUN mode needs no API key) |
 | `moduleN-problem-set.pdf` (+ `.tex`) | The problem set |
 | `moduleN-student-handout.md` | Session roadmap, key concepts, lab instructions, readings |
+
+- **`capstone/`** — guidelines with milestones, the grading rubric,
+  and three worked example project sketches (lab, field, and
+  AI-native designs).
+
+The ten labs trace the course's methodological arc: persona-grid
+experiments (Modules 1–5), power analysis by simulation (6), sampled
+demographic populations (7), multi-agent games (8–9), and the
+stability audit battery (10) that you point at your own capstone
+pilot.
 
 ## How to run a lab
 
